@@ -82,4 +82,71 @@ function findLargestNumber() {
 console.log(findLargestNumber(2, 17, 94, 1, 23, 37));
 console.log(findLargestNumber(49, 4, 7, 83, 12));
 
+
+function calAverage() {
+    
+    let total = 0;
+    for (const num of arguments) {
+        total += num;
+    }
+
+    return total /arguments.length
+    }
+
+console.log(calAverage(1, 2, 3, 4));
+console.log(calAverage(14, 8, 2));
+console.log(calAverage(27, 43, 2, 8, 36));
+
+
+
+function formatTime(minutes) {
+    const hours = Math.floor(minutes / 60);
+    minutes = minutes % 60;
+
+    return `${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')}`
+
+}
+
+console.log(formatTime(70));
+console.log(formatTime(450));
+console.log(formatTime(1441));
+
+
+const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+
+function addCourse(course) {
+    if (courses.includes(course)) {
+        return 'You had already this course'
+    }
+
+    courses.push(course)
+}
+    
+addCourse('Express');
+console.log(courses); 
+console.log(addCourse('CSS'));
+
+
+const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+
+function removeCourse(course) {
+    if (courses.includes(course)) {
+        const idx = courses.indexOf(course)
+        courses.splice(idx, 1);
+
+        return
+    }
+    return "Such a course not found"
+    
+}
 */
+
+function removeCourse(course) {
+    const idx = courses.indexOf(course);
+
+}
+
+
+removeCourse('React');
+console.log(courses);
+removeCourse('Vue');
