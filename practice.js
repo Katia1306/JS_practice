@@ -26,7 +26,7 @@ console.log(min(2, 5));
 console.log(min(3, -1));
 console.log(min(1, 1));
 
-
+----------------------------------------------------
 /* function getRectArea(dimensions) { 
     dimensions = dimensions.split(' ');
 
@@ -41,6 +41,7 @@ console.log(getRectArea('46 11'));
 console.log(getRectArea('8 112'));
 
 /*
+----------------------------------------------------
 function logItems(items) {
     for (let i = 0, num = 1; i < items.length; i += 1, num += 1){
         console.log(`${num} - ${items[i]}`)
@@ -49,7 +50,7 @@ function logItems(items) {
 
 logItems([' Mango', 'Poly', 'Ajax']);
 
-
+-----------------------------------------------------
 function printContactsInfo(names, phones) {
     names = names.split(',')
     phones = phones.split(',')
@@ -63,7 +64,7 @@ printContactsInfo('Jacob, William, Solomon,Artem',
     '9999999, 8888888, 7777777, 66666666'
 );
 
-
+------------------------------------------------------
 function findLargestNumber() { 
     //const arr = Array.from(arguments)
     const arr = [...arguments];
@@ -82,7 +83,7 @@ function findLargestNumber() {
 console.log(findLargestNumber(2, 17, 94, 1, 23, 37));
 console.log(findLargestNumber(49, 4, 7, 83, 12));
 
-
+---------------------------------------------------------
 function calAverage() {
     
     let total = 0;
@@ -98,7 +99,7 @@ console.log(calAverage(14, 8, 2));
 console.log(calAverage(27, 43, 2, 8, 36));
 
 
-
+------------------------------------------------------
 function formatTime(minutes) {
     const hours = Math.floor(minutes / 60);
     minutes = minutes % 60;
@@ -111,7 +112,7 @@ console.log(formatTime(70));
 console.log(formatTime(450));
 console.log(formatTime(1441));
 
-
+------------------------------------------------------
 const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
 
 function addCourse(course) {
@@ -126,7 +127,7 @@ addCourse('Express');
 console.log(courses); 
 console.log(addCourse('CSS'));
 
-
+------------------------------------------------------
 const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
 
 function removeCourse(course) {
@@ -139,14 +140,122 @@ function removeCourse(course) {
     return "Such a course not found"
     
 }
+------------------------------------------------------
+const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+
+function addCourse(course) {
+    if (courses.includes(course)) {
+        return 'You had already this course'
+    }
+
+    courses.push(course)
+}
+    
+//addCourse('Express');
+
+function updateCourse(oldCourse, newCourse) {
+    const idx = courses.indexOf(oldCourse);
+    if (!!~idx) {
+        courses.splice(idx, 1, newCourse);
+        return;
+    }
+    return "The course with this name is not found";
+}
+updateCourse('Express', 'NestJS');
+console.log(courses);
+console.log(updateCourse('Express', 'NestJS'));
+------------------------------------------------------
+------------------------------------------------------
 */
 
-function removeCourse(course) {
-    const idx = courses.indexOf(course);
+//----OBJECT----
+// const user = {
+//     // fullName: 'Alice User',
+//     name: 'Alice',
+//     age: 18,
+//     //skills: ['HTML', 'CSS', 'JS'],
+//     skills: {
+//         html: true,
+//         css: true,
+//         js: false
+//     },
 
+//     sayHello(city) {
+//         console.log(`Hello my name ${this.name}`);
+//     }
+    
+// }
+// const admin = {
+//     name: 'Admin',
+//     say: user.sayHello
+// }
+// user.sayHello('Lviv')
+// admin.say()
+
+//*******************FOR IN***************/
+
+// const user = {
+//     name: 'Alice',
+//     skills: {
+//         html: false,
+//         css: true,
+//         react: false
+//     },
+// }
+// const admin = Object.create(user)
+// admin.name = 'Mark'
+// console.log(admin);
+
+// for (const key in admin) {
+//     console.log(admin.hasOwnProperty(key));
+//     if (admin.hasOwnProperty(key)) {
+//         console.log(key);
+//         console.log(admin[key]);
+//     }
+// }
+
+//********** Object.keys()****************
+
+// const user = {
+//     name: 'Alice',
+//     skills: {
+//         html: false,
+//         css: true,
+//         react: false
+//     },
+// }
+
+// // const admin = Object.create(user)
+// // console.log(Object.keys(admin));
+// const keys = Object.keys(user);
+// console.log(keys);
+// for (const key of keys) {
+//     console.log(key, user[key]);
+// }
+
+//************** Object.values()*******/
+
+// const user = {
+//     name: 'Alice',
+//     skills: {
+//         html: false,
+//         css: true,
+//         react: false
+//     },
+// }
+
+// //const values = Object.values(user);
+// const values = Object.values(user.skills);
+// console.log(values);
+
+//*********************** PRACTICE **********/
+function createBasket(product, quantity, price) {
+    const basket = {
+        name: product,
+        quantity,
+        price,
+        totalPrice: quantity * price,
+    };
+    return basket
 }
-
-
-removeCourse('React');
-console.log(courses);
-removeCourse('Vue');
+console.log(basket);
