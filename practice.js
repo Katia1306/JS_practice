@@ -682,3 +682,114 @@ console.log(updateCourse('Express', 'NestJS'));
 //     console.log("Error: ", errorMessage);
   
 // calculateAvaragePrice(products, onSuccess, onError);
+
+
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+
+// const evenNumbers = numbers.filter(number => number % 2 === 0);
+
+// const oddNumbers = numbers.filter(number => number  % 2 === 1);
+
+// const users = [
+//     { id: 1, name: "John", age: 28, skills: ["Javascript", "HTML", "CSS"] },
+//     { id: 1, name: "Alice", age: 32, skills: ["Phyton", "Data Analysis"] },
+//     { id: 1, name: "Bob", age: 24, skills: ["Javascript", "React", "Node.js"] },
+//     { id: 1, name: "Emily", age: 40, skills: ["Java", "Spring"] },
+//     { id: 1, name: "David", age: 22, skills: ["C++", "CSS"] }
+// ];
+
+//**************************.  Method ----- MAP  */
+
+// const names = users.map((user) => user.name);
+// const names = users.map(({name}) => name);
+
+//**************************.  Method ----- flatMap -- rozglazue */
+ 
+//const numbers = [[1], [2], [3]];
+
+// const skills = users.flatMap(user => user.skills);
+// console.log(skills);
+
+//**************************.  Method ----- flat -- rozglazue */
+
+// const arr1 = [0, 1, 2, [3, [4, [45]]]];
+// const result = arr1.flat(3);
+// console.log(result);
+
+const users = [
+    { id: 1, name: "John", age: 28, skills: ["Javascript", "HTML", "CSS"] },
+    { id: 1, name: "Alice", age: 32, skills: ["Phyton", "Data Analysis"] },
+    { id: 1, name: "Bob", age: 24, skills: ["Javascript", "React", "Node.js"] },
+    { id: 1, name: "Emily", age: 40, skills: ["Java", "Spring"] },
+    { id: 1, name: "David", age: 22, skills: ["C++", "CSS"] }
+];
+
+
+
+//**************************.  Method ----- filter.  */
+
+// const result = users.filter(user => user.age > 30);
+// const result = users.filter(({ age }) => age >= 40);
+// const result = users.filter(({ skills }) => skills.includes("Javascript"));
+// console.log(result);
+
+//**************************.  Method ----- find      */
+// const result = users.find(({ skills }) => skills.includes("Javascript"));
+//  console.log(result);
+
+//**************************.  Method ----- findIndex      */
+
+// const idx = users.findIndex(({id})=>id === 3);
+// console.log(idx);
+
+//**************************.  Method ----- some / every     */
+
+// const isKnow = users.some(({ skills }) => skills.includes("Javascript"));
+// console.log(isKnow);
+
+// const isKnow = users.every(({ skills }) => skills.includes("Phyton"));
+// console.log(isKnow);
+
+// const isAdult = users.every(({ age }) => age >= 18);
+// console.log(isAdult);
+
+//**************************.  Method ----- SORT ---- mutuyuciy    */
+// AGE 
+// const result = users.sort((a, b) => a.age - b.age);
+// console.log(result);
+// Name
+// const result = users.sort((a, b) => a.name.localeCompare(b.name));
+// console.log(result);
+
+//**************************.  Method ----- REDUCE   */
+
+// const result = users.reduce((acc, { age }) => {
+//     return acc + age;
+// }, 0);
+// console.log(result);
+// MORE THAN 30TY
+// const names = users.reduce((acc, { name, age }) => {
+//     if (age >= 30) {
+//         acc.push(name);
+//     }
+//     return acc;
+// }, []);
+// console.log(names);
+
+//**************************.  Methods ---- PRACTICE   */
+const students = [
+    { name: "John", grades: [80, 85, 90] },
+    { name: "Alice", grades: [90, 95, 92] },
+    { name: "Bob", grades: [70, 80, 75] },
+    { name: "Emily", grades: [95, 92, 88] },
+    { name: "Bob", grades: [85, 88, 90] },
+];
+
+function getAverage(arr) {
+    const result = arr.map(({ name, grades }) => {
+        const total = grades.reduce((acc, item) => acc + item)
+
+    console.log(total);
+    
+    })
+}
